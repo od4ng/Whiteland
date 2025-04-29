@@ -1,0 +1,148 @@
+<style>
+    /* Custom overrides or enhancements */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    header h1 {
+      letter-spacing: 1px;
+    }
+
+    img {
+      transition: transform 0.3s ease;
+    }
+
+    img:hover {
+      transform: scale(1.02);
+    }
+
+    footer {
+      font-size: 0.875rem;
+    }
+
+    a {
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #1d4ed8; /* Tailwind blue-700 */
+    }
+    ul li a:hover{
+    background-color:blue;
+    color:white;
+  }
+    ul li.active a
+    background-color:white #fff;
+    color: black;
+  </style>
+
+
+
+
+
+
+
+/* Resetting some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    transition: margin-left 0.3s ease; /* Smooth transition for content shift */
+}
+
+/* Sidebar Styling */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Start hidden off-screen */
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    transition: left 0.3s ease; /* Smooth transition for sliding in */
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2); /* Soft shadow for the sidebar */
+}
+
+.sidebar h2 {
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.sidebar p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+/* Main content styling */
+.content {
+    padding: 20px;
+    transition: margin-left 0.3s ease; /* Content will shift when sidebar appears */
+}
+
+.content h1 {
+    color: #333;
+    font-size: 32px;
+}
+
+.content p {
+    font-size: 18px;
+}
+
+/* Sidebar toggle button */
+.sidebar-toggle {
+    font-size: 18px;
+    padding: 6px 10px; /* Smaller button */
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000; /* Button stays above other elements */
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-toggle:hover {
+    background-color: #444; /* Change button color on hover */
+}
+
+/* Sidebar visible (when active) */
+.sidebar.active {
+    left: 0; /* Move sidebar into view */
+}
+
+/* Adjust the content when the sidebar is visible */
+body.sidebar-active .content {
+    margin-left: 0; /* Content shouldn't shift */
+}
+
+/* Sidebar active state (doesn't overlap content) */
+body.sidebar-active .sidebar {
+    z-index: 2000; /* Sidebar stays on top of the content */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px; /* Reduce sidebar width on smaller screens */
+    }
+    .sidebar-toggle {
+        font-size: 16px; /* Slightly smaller button on mobile */
+        padding: 5px 8px;
+    }
+    .sidebar h2 {
+        font-size: 20px; /* Adjust text size for better readability */
+    }
+    .sidebar p {
+        font-size: 13px; /* Smaller font size on mobile */
+    }
+}
