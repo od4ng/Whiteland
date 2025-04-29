@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Referral Program</title>
+
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* Body background animation */
+    body {
+      background: linear-gradient(-45deg, #89f7fe, #66a6ff, #a1c4fd, #c2e9fb);
+      background-size: 400% 400%;
+      animation: gradientAnimation 15s ease infinite;
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', Arial, sans-serif;
+      padding: 20px;
+    }
+
+    @keyframes gradientAnimation {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    /* Card style */
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 50px 30px;
+      border-radius: 25px;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      animation: fadeInSlideUp 1s ease-out forwards;
+      backdrop-filter: blur(8px);
+    }
+
+    /* Main image */
+    .main-image {
+      width: 100%;
+      max-width: 450px;
+      height: auto;
+      object-fit: contain;
+      border-radius: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+    }
+
+    /* QR code style */
+    .qr-code {
+      width: 180px;
+      height: 180px;
+      margin-top: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .qr-code:hover {
+      transform: scale(1.1);
+    }
+
+    h1 {
+      font-size: 30px;
+      font-weight: 600;
+      color: #333;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    @keyframes fadeInSlideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* Glowing button */
+    .glow-button {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .glow-button::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(66,153,225,0.4) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .glow-button:hover::after {
+      opacity: 1;
+    }
+
+    .glow-button:hover {
+      box-shadow: 0 0 20px rgba(59,130,246,0.6);
+      transform: scale(1.05);
+      background-color: #ebf8ff;
+      color: #2b6cb0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <!-- Top Image -->
+    <a onclick="redirectToMessenger()" class="inline-block cursor-pointer">
+      <img src="refer.png" alt="Referral Program" class="main-image">
+    </a>
+
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">Join Our Referral Program</h1>
+
+
+    
+
+     <!-- Back Button Centered at Bottom -->
+<div class="flex justify-center mt-20 mb-10">
+  <button onclick="window.location.href='website.html';" class="px-6 py-3 bg-white text-blue-800 font-semibold rounded-md hover:bg-cyan-300 hover:text-blue-900 transition transform hover:scale-105 shadow-xl">
+    ← Back to Main Page
+  </button>
+</div>
+
+</body>
+</html>

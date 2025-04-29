@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Process Flow - Whitelands Express</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #1D4ED8;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    h1, p {
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    }
+
+    .fade-up, .zoom-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease-out;
+    }
+
+    .zoom-in {
+      transform: scale(0.95);
+    }
+
+    .show.fade-up {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .show.zoom-in {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .btn-upgrade {
+      transition: all 0.4s ease, transform 0.5s ease;
+      box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.3);
+    }
+
+    .btn-upgrade:hover {
+      transform: translateY(-5px) scale(1.07);
+      background-color: #67e8f9;
+      color: #1E3A8A;
+      box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.5);
+    }
+  </style>
+</head>
+
+<body class="text-white">
+
+  <section class="text-center px-4 pt-12">
+    <h1 class="text-4xl font-bold mb-4 fade-up">Our Process Flow</h1>
+    <p class="text-lg mb-8 fade-up">Here's how we get things done efficiently and effectively.</p>
+
+    <!-- Process Flow Image -->
+    <div class="flex justify-center mb-12">
+      <img src="pf.png" alt="Process Flow Diagram" class="max-w-full h-auto rounded-lg shadow-lg border border-white zoom-in" />
+    </div>
+
+    <!-- Back Button -->
+    <button onclick="window.location.href='about.html';" class="px-6 py-3 bg-white text-blue-800 font-semibold rounded-md btn-upgrade">
+      ← Back to About Us Page
+    </button>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-sm text-white mt-20 mb-6 fade-up">
+    <p>&copy; 2025 Whitelands Express, Inc. | All Rights Reserved</p>
+  </footer>
+
+  <!-- Motion Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observerOptions = {
+        threshold: 0.2,
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.fade-up, .zoom-in').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
+
+</body>
+</html>

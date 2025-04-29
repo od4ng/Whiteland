@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mission and Vision - Whitelands Express</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    /* Page background */
+    body {
+      background-image: url('mv.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 0;
+      min-height: 160vh;
+      font-family: 'Inter', sans-serif;
+      color: #1E3A8A;
+    }
+
+    /* Overlay to make content readable */
+    .overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(255, 255, 255, 0.7);
+      z-index: 0;
+    }
+
+    .content {
+      position: relative;
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      z-index: 10;
+      animation: fadeIn 1s ease forwards;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .content.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Header animation */
+    header {
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeInHeader 1.5s ease-out forwards;
+    }
+
+    @keyframes fadeInHeader {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Button animation */
+    .btn-upgrade {
+      transition: all 0.4s ease, transform 0.5s ease;
+      box-shadow: 0px 4px 15px rgba(30, 58, 138, 0.3);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInButton 1.5s ease-out forwards;
+    }
+
+    @keyframes fadeInButton {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .btn-upgrade:hover {
+      transform: translateY(-5px) scale(1.07);
+      background-color: #67e8f9;
+      color: #1E3A8A;
+      box-shadow: 0px 10px 30px rgba(30, 58, 138, 0.5);
+    }
+
+    /* Paragraph animation */
+    .fade-in-paragraph {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInParagraph 1.5s ease-out forwards;
+    }
+
+    @keyframes fadeInParagraph {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body class="relative">
+
+  <div class="overlay"></div>
+
+  <header class="relative bg-blue-800 text-white p-6 mb-8 text-center z-10 shadow-md">
+    <h1 class="text-4xl font-bold fade-up">Our Mission and Vision</h1>
+  </header>
+
+  <main class="relative max-w-3xl mx-auto content text-blue-900">
+    <section class="mb-8">
+      <h2 class="text-2xl font-bold mb-4">Our Mission</h2>
+      <p class="text-lg leading-relaxed fade-in-paragraph">
+        Whitelands Express, Inc. (WEI) is committed to offering superior services compared to other companies. 
+        Excellence in customer service is our top priority. We assure our clients of quality performance in every move, 
+        providing personalized service at competitive prices. We commit our expertise to ensure fast, cost-efficient, 
+        and reliable cargo management services.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold mb-4">Our Vision</h2>
+      <p class="text-lg leading-relaxed fade-in-paragraph">
+        To be recognized as one of the top logistics companies globally. Our aim is to be the top choice for customers 
+        by conducting business fairly and honestly while consistently delivering exceptional merchandise and 
+        services.
+      </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative text-center text-sm text-blue-800 mt-20 mb-6 z-10">
+      &copy; 2025 Whitelands Express, Inc.
+    </footer>
+  </main>
+
+  <!-- Back Button -->
+  <div class="relative flex justify-center mt-16 z-10">
+    <button onclick="window.location.href='about.html';" class="px-6 py-3 bg-white text-blue-800 font-semibold rounded-md btn-upgrade">
+      ← Back to About Us Page
+    </button>
+  </div>
+
+  <!-- Animation on Scroll -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const content = document.querySelector('.content');
+      const paragraphs = document.querySelectorAll('.fade-in-paragraph');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            content.classList.add('show');
+            entry.target.classList.add('fade-in-paragraph');
+          }
+        });
+      }, { threshold: 0.3 });
+
+      observer.observe(content);
+      paragraphs.forEach(paragraph => observer.observe(paragraph));
+    });
+  </script>
+
+</body>
+</html>

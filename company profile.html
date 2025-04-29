@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trucking Services - Whitelands Express</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    /* Page background */
+    body {
+      background-image: url('backs.png'); /* Replace with your image URL */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 0;
+      height: 170vh; /* Ensure it covers the full height of the page */
+    }
+
+    /* Content background */
+    .content {
+      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1.5s ease-out; /* Fade-in effect */
+    }
+
+    /* Header animation */
+    header {
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeInHeader 1.5s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInHeader {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Button animation */
+    button {
+      animation: fadeInButton 2s ease-out forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    @keyframes fadeInButton {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body class="text-blue-900 font-sans p-8 bg-gray-50 bg-opacity-80">
+
+  <header class="bg-blue-800 text-white p-6 mb-8 bg-opacity-90">
+    <h1 class="text-3xl font-bold">Company Profile</h1>
+  </header>
+
+  <main class="max-w-3xl mx-auto content">
+    <h2 class="text-2xl font-semibold mb-4"></h2>
+    <p class="mb-4">
+      Whitelands Express, Incorporated is a logistics company specializing in industrial deliveries, warehousing, freight forwarding, brokerage, and other logistics services. The Company utilizes computer-based dispatching, billing, inventory, and HR systems to provide fast, efficient, and effective service to its clients. It continuously upgrades its fleet of over 100 trucks and is fast becoming a supplier of logistical services in the food industry and other various commodities. It is dedicated to serving its customers in a timely and reliable manner. The company is actively involved in ensuring the safety of its deliveries through the use of armed escorts.
+      <br/><br/>
+      We provide you with personalized service at a competitive price. We commit our expertise to the clients and assure fast, cost-efficient, and reliable cargo management services. We accomplish this by purchasing and maintaining state-of-the-art equipment, hiring professional, courteous, experienced drivers, and communicating with our drivers, helpers, and dispatch team on a daily one-on-one basis.
+      <br/><br/>
+      Our main office and truck yard are strategically located in Carmona, Cavite, near the South Luzon Expressway, where we can easily respond to the demand of our clients. We also have satellite offices and warehouses within North and South Luzon. The Company started its operations on July 2, 2012.
+      <footer class="text-center text-sm text-blue-800 mt-12">
+    &copy; 2025 Whitelands Express, Inc.
+  </footer>
+    </p>
+  </main>
+
+  <!-- Back Button Centered at Bottom -->
+  <div class="flex justify-center mt-20 mb-10">
+    <button onclick="window.location.href='about.html';" class="px-6 py-3 bg-white text-blue-800 font-semibold rounded-md hover:bg-cyan-300 hover:text-blue-900 transition transform hover:scale-105 shadow-xl">
+      ← Back to About Us Page
+    </button>
+  </div>
+
+</body>
+</html>

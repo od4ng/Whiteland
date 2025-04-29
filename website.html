@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Whitelands Express, Inc.</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  
+  <style>
+  body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%);
+  }
+
+  /* Animation: Fade In + Slide Up */
+  @keyframes fadeInSlideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Apply animation to header */
+  .header-animation {
+    animation: fadeInSlideUp 1.5s ease-out forwards;
+  }
+
+  /* Animation: Fade In for Hero */
+  .hero-animation {
+    animation: fadeIn 2s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  /* Animation: Slide In Bottom for Contact */
+  .contact-animation {
+    animation: slideInBottom 1.5s ease-out forwards;
+  }
+
+  @keyframes slideInBottom {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Fade up content */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  .fade-up.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Nice hover for buttons */
+  .btn-upgrade {
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  .btn-upgrade:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Smoother links */
+  a {
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+  }
+
+  a:hover {
+    color: #1e40af; /* Tailwind blue-800 */
+  }
+</style>
+
+</head>
+
+  <body class="bg-white text-blue-900">
+
+    <!-- Hero with Background -->
+    <section class="bg-cover bg-center bg-no-repeat text-white h-screen relative" style="background-image: url('bgs.jpg');">
+      <div class="bg-blue-900 bg-opacity-70 absolute inset-0"></div>
+      <header class="relative z-10 p-6 flex justify-between items-center header-animation">
+        <h1 class="text-3xl font-bold text-white">Whitelands Express, Inc.</h1>
+        <p class="text-white text-lg mt-1 tracking-wide uppercase font-semibold">WEI LOVE OUR CUSTOMERS</p>
+        <nav class="space-x-6 text-white">
+          <a href="#services" class="hover:underline">Services</a>
+          <a href="about.html" target="_blank" class="hover:underline">About Us</a>
+          <a href="#contact" class="hover:underline">Contact</a>
+          <img src="logoo.png" alt="Logo" class="h-10 inline-block rounded shadow-md ml-4"/>
+        </nav>
+      </header>
+
+      <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 hero-animation">
+        <h2 class="text-5xl font-bold mb-4">Delivering With Excellence</h2>
+        <p class="text-xl mb-6">Trucking • Freight • Warehousing • Brokerage</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+  <a href="#services" class="bg-white text-blue-800 font-semibold py-3 px-6 rounded-lg shadow btn-upgrade hover:bg-blue-100 transition">
+  Get in Touch
+</a>
+
+  <a href="https://docs.google.com/forms/d/1f2oVgGyksctA_oBI8G7R0OgP9iLwug1PR7filxjLaeI/viewform?edit_requested=true" 
+     target="_blank" 
+     rel="noopener noreferrer"
+     class="bg-white text-blue-800 font-semibold py-3 px-6 rounded-lg shadow btn-upgrade hover:bg-blue-700 transition">
+    📅 Book an Appointment
+  </a>
+</div>
+
+
+      </div>
+
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-16 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-10 text-blue-900">Our Services</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-lg mb-10">
+  
+  <!-- Trucking -->
+  <div class="fade-up p-6 rounded-xl bg-white/30 backdrop-blur-md shadow-lg border-2 border-transparent hover:border-blue-400 hover:shadow-blue-400/50 hover:scale-105 transform transition duration-500">
+    <a href="trucking.html" class="block text-blue-800 hover:text-blue-600 text-xl font-semibold">🚛 Trucking</a>
+  </div>
+
+  <!-- Freight Forwarding -->
+  <div class="fade-up p-6 rounded-xl bg-white/30 backdrop-blur-md shadow-lg border-2 border-transparent hover:border-green-400 hover:shadow-green-400/50 hover:scale-105 transform transition duration-500">
+    <a href="freight forwarding.html" class="block text-blue-800 hover:text-blue-600 text-xl font-semibold">📦 Freight Forwarding</a>
+  </div>
+
+  <!-- Warehousing -->
+  <div class="fade-up p-6 rounded-xl bg-white/30 backdrop-blur-md shadow-lg border-2 border-transparent hover:border-purple-400 hover:shadow-purple-400/50 hover:scale-105 transform transition duration-500">
+    <a href="Warehousing.html" class="block text-blue-800 hover:text-blue-600 text-xl font-semibold">🏢 Warehousing</a>
+  </div>
+
+  <!-- Brokerage -->
+  <div class="fade-up p-6 rounded-xl bg-white/30 backdrop-blur-md shadow-lg border-2 border-transparent hover:border-pink-400 hover:shadow-pink-400/50 hover:scale-105 transform transition duration-500">
+    <a href="brokerage.html" class="block text-blue-800 hover:text-blue-600 text-xl font-semibold">📄 Brokerage</a>
+  </div>
+
+</div>
+
+<!-- CENTERED BUTTONS BELOW -->
+<div class="flex flex-col items-center space-y-6 fade-up mt-12">
+
+  <a href="volume-rewards.html" class="inline-block bg-blue-800 text-white font-semibold py-4 px-8 rounded-xl shadow-lg btn-upgrade hover:bg-blue-700 transition transform hover:scale-105">
+    🏆 Volume-Based Rewards
+  </a>
+
+  <a href="referral-program.html" class="inline-block bg-green-800 text-white font-semibold py-4 px-8 rounded-xl shadow-lg btn-upgrade hover:bg-green-700 transition transform hover:scale-105">
+    🌟 Referral Program
+  </a>
+
+</div>
+
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="bg-blue-50 py-16 contact-animation">
+      <div class="max-w-3xl mx-auto text-center">
+        <h3 class="text-3xl font-bold mb-6 text-blue-900">Contact Us</h3>
+        <p class="mb-2"><strong>Phone:</strong> (+632) 6851- | (+63) 9274954080</p>
+        <p class="mb-2"><strong>Website:</strong> <a href="https://www.aacei.ph" class="text-blue-600 underline">www.aacei.ph</a></p>
+        <p class="mb-4"><strong>Address:</strong><br/>
+          Phase 3, Blk 5 Lot 3 Sterling Technopark, Brgy. Lantic, Cavite<br/>
+          Gacho Gonzalez Bldg., 40 Jupiter St. corner Yakal, Makati City
+        </p>
+        <div class="mt-4 flex flex-col items-center space-y-4">
+  <a href="https://facebook.com/WhitelandsExpressInc" class="text-blue-800 font-semibold hover:text-blue-900 hover:underline">
+    📘 Follow us on Facebook
+  </a>
+
+  
+</div>
+
+    </section>
+
+    <!-- Scroll to Contact Section -->
+    <script>
+      document.querySelector('a[href="#contact"]').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default anchor click behavior
+        document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+      });
+      
+      document.addEventListener('DOMContentLoaded', () => {
+        const observerOptions = {
+          threshold: 0.2,
+          rootMargin: "0px 0px -50px 0px"
+        };
+
+        const onEntry = (entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('show');
+              observer.unobserve(entry.target); // Stop observing after animated
+            }
+          });
+        };
+
+        const observer = new IntersectionObserver(onEntry, observerOptions);
+
+        // Target multiple animation classes easily
+        const animatedElements = document.querySelectorAll('.fade-up, .fade-in, .slide-in-right, .zoom-in');
+
+        animatedElements.forEach(el => observer.observe(el));
+      });
+    </script>
+
+  </body>
+</html>

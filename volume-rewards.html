@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Volume-Based Rewards</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(-45deg, #e0f7fa, #f0f9ff, #dbeafe, #e0f2fe);
+    background-size: 400% 400%;
+    animation: gradientBG 18s ease infinite;
+    color: #1e3a8a;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .fade-in-slide-up {
+    animation: fadeInSlideUp 1.5s ease-out;
+  }
+
+  @keyframes fadeInSlideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .modal {
+    animation: modalFade 0.3s ease-out;
+  }
+
+  img {
+    border: 4px solid #e0f2fe;
+    border-radius: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  p {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    max-width: 40rem;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 1.25rem 1.75rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  button {
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+  }
+
+  button:hover {
+    transform: scale(1.05);
+    background-color: #bae6fd;
+    color: #1e3a8a;
+  }
+
+  a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  a:hover {
+    color: #1d4ed8;
+  }
+
+  /* Optional: Floating sparkles */
+  body::before, body::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: moveBG 60s linear infinite;
+    opacity: 0.4;
+  }
+
+  @keyframes moveBG {
+    0% { background-position: 0 0; }
+    100% { background-position: 1000px 1000px; }
+  }
+</style>
+
+</head>
+
+<body class="bg-blue-50 flex flex-col items-center justify-center min-h-screen p-6 relative">
+
+  <!-- Image Button Section -->
+  <div class="fade-in-slide-up max-w-2xl w-full text-center">
+    <a onclick="redirectToMessenger()" class="cursor-pointer inline-block">
+      <img src="volume.png" alt="Volume-Based Rewards" class="rounded-lg shadow-lg w-full mb-6 hover:scale-105 transition duration-300">
+    </a>
+  </div>
+
+  <div class="fade-in-slide-up max-w-2xl w-full text-center">
+    <p class="text-blue-900 text-lg font-medium">
+      Enjoy exclusive savings with our <strong>Volume-Based Rewards</strong>! 
+      Get 10% off after every 10 completed deliveries — the more you ship, the more you save.
+    </p>
+  </div>
+
+  <script>
+    function redirectToMessenger() {
+      // Pre-filled message content based on your request
+      const name = 'Name: ';
+      const company = 'Company Name: ';
+      const product = 'Product: ';
+      const targetDate = 'Target Date of Delivery: ';
+      const phone = 'Phone Number: ';
+
+      // Construct the Messenger URL with pre-filled content
+      const messengerUrl = `https://m.me/61575644825482?text=${encodeURIComponent(name)}%0A${encodeURIComponent(company)}%0A${encodeURIComponent(product)}%0A${encodeURIComponent(targetDate)}%0A${encodeURIComponent(phone)}`;
+
+      // Open Messenger with the pre-filled message
+      window.open(messengerUrl, '_blank');
+    }
+  </script>
+
+</body>
+<div class="flex justify-center mt-20 mb-10">
+  <button onclick="window.location.href='website.html';" class="px-6 py-3 bg-white text-blue-800 font-semibold rounded-md hover:bg-cyan-300 hover:text-blue-900 transition transform hover:scale-105 shadow-xl">
+    ← Back to Main Page
+  </button>
+</div>
+
+</html>

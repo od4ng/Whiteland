@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Whitelands Express - About Us</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #1D4ED8; /* Blue background */
+      color: white;
+      overflow-x: hidden;
+    }
+    .overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+    h1, h2, p {
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    }
+    /* Animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .zoom-in {
+      opacity: 0;
+      transform: scale(0.95);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+    .zoom-in.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .btn-upgrade {
+      transition: all 0.4s ease;
+      box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.3);
+    }
+    .btn-upgrade:hover {
+      transform: translateY(-5px) scale(1.05);
+      background-color: #67e8f9; /* cyan-300 */
+      color: #1E3A8A; /* blue-900 */
+      box-shadow: 0px 8px 25px rgba(255, 255, 255, 0.5);
+    }
+  </style>
+</head>
+
+<body class="text-white">
+
+  <!-- Hero Section -->
+  <section class="relative">
+    <div class="overlay"></div>
+    <header class="relative z-10 text-center p-12 mt-10 fade-up">
+      <img src="logoo.png" alt="Whitelands Express Logo" class="mx-auto mb-4 w-32 rounded-full shadow-lg zoom-in" />
+      <h1 class="text-5xl font-bold mb-6 text-white">About Whitelands Express, Inc.</h1>
+
+      <!-- Centered Buttons with Upgraded Motion -->
+      <div class="flex flex-wrap justify-center gap-6 mt-8 fade-up">
+        <button onclick="window.location.href='company profile.html';" class="px-8 py-4 rounded-md bg-white text-blue-800 font-semibold btn-upgrade">
+          Company Profile
+        </button>
+        <button onclick="window.location.href='mission-vision.html';" class="px-8 py-4 rounded-md bg-white text-blue-800 font-semibold btn-upgrade">
+          Our Mission and Vision
+        </button>
+        <button onclick="window.location.href='process-flow.html';" class="px-8 py-4 rounded-md bg-white text-blue-800 font-semibold btn-upgrade">
+          Process Flow
+        </button>
+      </div>
+    </header>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-sm text-white mt-20 mb-6 fade-up">
+    <p>&copy; 2025 Whitelands Express, Inc. | All Rights Reserved</p>
+  </footer>
+
+  <!-- Animation Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observerOptions = {
+        threshold: 0.2,
+      };
+
+      const onEntry = (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target);
+          }
+        });
+      };
+
+      const observer = new IntersectionObserver(onEntry, observerOptions);
+
+      document.querySelectorAll('.fade-up, .zoom-in').forEach(el => observer.observe(el));
+    });
+  </script>
+<div class="flex justify-center mt-20 mb-10">
+  <button onclick="window.location.href='website.html';" class="px-6 py-3 bg-white text-blue-800 font-semibold rounded-md hover:bg-cyan-300 hover:text-blue-900 transition transform hover:scale-105 shadow-xl">
+    ← Back to Main Page
+  </button>
+</div>
+</body>
+</html>
